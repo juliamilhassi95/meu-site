@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Julia Lopes - Formação</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Julia Lopes</h1>
+        <p>Engenharia de Software | CV Online</p>
+    </header>
+    <nav>
+        <a href="index.html">Sobre Mim</a>
+        <a href="formacao.html">Formação</a>
+        <a href="portfolio.html">Portfólio</a>
+        <a href="contato.html">Contato</a>
+    </nav>
+    <main>
+        <h2>Formação Acadêmica</h2>
+        <p>Atualmente cursando o segundo semestre de Engenharia de Software na Universidade Uninter.<br> Aprendendo sobre lógica de programação, desenvolvimento web, banco de dados e metodologias ágeis.</p>
+        <h3>Idiomas</h3>
+        <ul>
+            <li>Português - Nativo</li>
+            <li>Inglês - Nível B2</li>
+            <li>Italiano - Nível A1/A2</li>
+        </ul>
+        <h3>Certificações e Cursos</h3>
+        <ul>
+            <li>Curso de Python - Udemy</li>
+            <li>Curso de Inglês - EF English</li>
+            <li>Curso de Banco de Dados - Udemy</li>
+        </ul>
+    </main>
+    <footer>
+        <p>Julia Milhassi &copy; 2025</p>
+    </footer>
+
+    <!-- JavaScript para destacar página atual no menu -->
+    <script>
+    const links = document.querySelectorAll('nav a');
+    links.forEach(link => {
+        if (link.href === window.location.href) {
+            link.classList.add('active');
+        }
+    });
+    </script>
+</body>
+</html>

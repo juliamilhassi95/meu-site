@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Julia Lopes - Contato</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Julia Lopes</h1>
+        <p>Engenharia de Software | CV Online</p>
+    </header>
+    <nav>
+        <a href="index.html">Sobre Mim</a>
+        <a href="formacao.html">Formação</a>
+        <a href="portfolio.html">Portfólio</a>
+        <a href="contato.html">Contato</a>
+    </nav>
+    <main>
+        <h2>Contato</h2>
+        <p>Preencha o formulário abaixo para entrar em contato comigo!:</p>
+        <form action="#" method="post">
+            <input type="text" name="nome" placeholder="Nome" required>
+            <input type="email" name="email" placeholder="Email" required>
+            <textarea name="mensagem" placeholder="Mensagem" rows="5" required></textarea>
+            <button type="submit">Enviar</button>
+        </form>
+    </main>
+    <footer>
+        <p>Julia Milhassi &copy; 2025</p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+    // Destacar página atual no menu
+    const links = document.querySelectorAll('nav a');
+    links.forEach(link => {
+        if (link.href === window.location.href) {
+            link.classList.add('active');
+        }
+    });
+
+    // Validação do formulário e mensagem de feedback
+    const form = document.querySelector('form');
+    form.addEventListener('submit', function(event) {
+        const nome = form.nome.value.trim();
+        const email = form.email.value.trim();
+        const mensagem = form.mensagem.value.trim();
+
+        if (nome === '' || email === '' || mensagem === '') {
+            alert('Por favor, preencha todos os campos antes de enviar.');
+            event.preventDefault(); // impede envio
+        } else {
+            alert('Mensagem enviada com sucesso! Obrigada pelo contato.');
+        }
+    });
+    </script>
+</body>
+</html>
