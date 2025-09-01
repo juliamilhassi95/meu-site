@@ -1,0 +1,60 @@
+PORTFOLIO.HTML
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Julia Lopes - Portfólio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Julia Lopes</h1>
+        <p>Engenharia de Software | CV Online</p>
+    </header>
+    <nav>
+        <a href="index.html">Sobre Mim</a>
+        <a href="formacao.html">Formação</a>
+        <a href="portfolio.html">Portfólio</a>
+        <a href="contato.html">Contato</a>
+    </nav>
+    <main>
+    <h2>Projetos</h2>
+    <p>Projetos pessoais desenvolvidos para estudos e treinamentos:</p>
+
+    <h3><a href="projetos/receitas.html" target="_blank">Site de Receitas</a></h3>
+    <p>Um site simples com receitas rápidas e fáceis.</p>
+
+    <h3><a href="projetos/blog.html" target="_blank">Blog Tech</a></h3>
+    <p>Blog de tecnologia com artigos sobre IA e programação.</p>
+
+    <h3><a href="projetos/tarefa.html" target="_blank">Lista de Tarefas</a></h3>
+    <p>Aplicativo de lista de tarefas com marcação de tarefas pendentes.</p>
+
+</main>
+
+    <footer>
+        <p>Julia Milhassi &copy; 2025</p>
+    </footer>
+
+    <!-- JavaScript para destacar página atual no menu -->
+    <script>
+    const links = document.querySelectorAll('nav a');
+    links.forEach(link => {
+        if (link.href === window.location.href) {
+            link.classList.add('active');
+        }
+    });
+
+    // Interatividade nas imagens: clicando, aumentam de tamanho
+    const imagens = document.querySelectorAll('main img');
+    imagens.forEach(img => {
+        img.addEventListener('click', () => {
+            img.style.transform = img.style.transform === 'scale(1.5)' ? 'scale(1)' : 'scale(1.5)';
+            img.style.transition = 'transform 0.3s';
+        });
+    });
+    </script>
+</body>
+</html>
+

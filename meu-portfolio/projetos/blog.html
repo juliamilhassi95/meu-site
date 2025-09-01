@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Projeto 2 - Blog Tech</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      background: #e3f2fd;
+      color: black;
+    }
+    header {
+      background: #1565c0;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+    main {
+      max-width: 900px;
+      margin: auto;
+      padding: 30px;
+    }
+    article {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      margin-bottom: 25px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    article:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
+    article h2 {
+      margin-bottom: 10px;
+      color: mediumaquamarine;
+      cursor: pointer;
+      transition: color 0.3s;
+    }
+    article h2:hover {
+      color: #009688;
+    }
+    .article-content {
+      display: block;
+    }
+    footer {
+      background: powderblue;
+      color: white;
+      text-align: center;
+      padding: 15px;
+    }
+    #topBtn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #1565c0;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 5px;
+      cursor: pointer;
+      display: none;
+      transition: background 0.3s;
+    }
+    #topBtn:hover {
+      background: #0d47a1;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Blog Tech</h1>
+    <p>Novidades e tendências em tecnologia</p>
+  </header>
+
+  <main>
+    <article>
+      <h2 onclick="toggleArticle(this)">Inteligência Artificial em 2025</h2>
+      <div class="article-content">
+        <h3>O Futuro Já Está Aqui!</h3>
+        <p>
+Em 2025, a inteligência artificial deixou de ser apenas um conceito futurista para se tornar uma presença constante em nossas vidas. Hoje, a IA não está apenas em assistentes virtuais ou recomendações de filmes, ela está transformando setores inteiros, desde a saúde até a educação, a indústria e o entretenimento.
+Na saúde, algoritmos avançados conseguem analisar imagens médicas em segundos, detectar doenças precocemente e até sugerir tratamentos personalizados com base no perfil genético de cada paciente. Isso não apenas aumenta a precisão dos diagnósticos, mas também democratiza o acesso a cuidados médicos de qualidade.
+No trabalho, a IA está redefinindo profissões. Ferramentas de automação e assistentes inteligentes ajudam profissionais a tomar decisões mais rápidas e precisas, liberando tempo para criatividade e inovação. Em 2025, empregos que exigem análise de dados complexos ou tarefas repetitivas já não são mais exclusivos de humanos, a colaboração entre pessoas e máquinas se tornou essencial.
+Na vida cotidiana, a IA também está presente de formas surpreendentes. Casas inteligentes, carros autônomos e aplicativos que entendem nossos hábitos tornam o dia a dia mais prático e personalizado. A IA conversa, aprende e até antecipa nossas necessidades, sem falar na forma como está revolucionando a educação, oferecendo aprendizado adaptativo e experiências personalizadas para estudantes de todas as idades!
+Apesar de todos os avanços, 2025 também nos lembra da importância de pensar eticamente sobre IA. Questões como privacidade, viés algorítmico e segurança ainda são desafios reais que precisam ser enfrentados enquanto avançamos para um futuro cada vez mais inteligente.
+Em resumo, a IA em 2025 não é mais apenas uma promessa, ela é parte do nosso presente! Aprender a conviver com ela, entendê-la e utilizá-la de maneira consciente será essencial para aproveitar todo o seu potencial sem abrir mão da nossa humanidade.
+        </p>
+      </div>
+    </article>
+
+    <article>
+      <h2 onclick="toggleArticle(this)">Programação para Iniciantes</h2>
+      <div class="article-content">
+        <h3>Como Dar os Primeiros Passos no Mundo do Código?</h3>
+        <p>Se você sempre quis aprender a programar, mas não sabia por onde começar, 2025 é um ótimo momento para dar os primeiros passos. A programação deixou de ser um “mistério de especialistas” e se tornou uma habilidade acessível a qualquer pessoa interessada em tecnologia, criatividade e resolução de problemas.</p>
+        <h3>Por que aprender programação?</h3>
+        <p>Programar é basicamente ensinar computadores a executar tarefas. Com isso, você pode criar sites, aplicativos, jogos, automatizar tarefas do dia a dia e até explorar inteligência artificial. Além disso, aprender a programar desenvolve o pensamento lógico, a paciência e a capacidade de resolver problemas, habilidades valiosas em qualquer área profissional.</p>
+        <h3>Escolhendo a primeira linguagem</h3>
+        <p>Para iniciantes, algumas linguagens são mais amigáveis:<br>
+        - Python: fácil de aprender e muito versátil, ótima para scripts, dados e IA.<br>
+        - JavaScript: essencial para criar sites interativos.<br>
+        - Scratch: ideal para crianças ou quem quer começar de forma visual e divertida.</p>
+        <h3>Começando com pequenos projetos</h3>
+        <p>Nada motiva mais do que ver o resultado do seu código funcionando. Comece pequeno, um site pessoal, um joguinho simples ou um programa que organize sua lista de tarefas. Aos poucos, você ganhará confiança e compreensão dos conceitos fundamentais como variáveis, loops e funções.</p>
+        <h3>Dicas para manter o ritmo</h3>
+        <p>Pratique todos os dias, programação é como um idioma: Quanto mais você pratica, mais fluente fica.<br>
+        Aprenda com erros: bugs fazem parte do processo e ajudam a entender melhor a lógica do código.<br>
+        Participe de comunidades: fóruns e grupos de programação oferecem apoio, desafios e inspiração.<br>
+        Começar a programar pode parecer intimidador, mas cada linha de código é um passo em direção a habilidades que serão cada vez mais valorizadas no futuro. Se você der o primeiro passo hoje, em pouco tempo verá que criar soluções com programação pode ser não apenas útil, mas também extremamente divertido.</p>
+      </div>
+    </article>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Blog Tech</p>
+  </footer>
+
+  <button id="topBtn" onclick="scrollToTop()">Voltar ao Topo</button>
+
+  <script>
+    // Accordion simples
+    function toggleArticle(header) {
+      const content = header.nextElementSibling;
+      content.style.display = content.style.display === 'block' ? 'none' : 'block';
+    }
+
+    // Botão voltar ao topo
+    const topBtn = document.getElementById("topBtn");
+    window.onscroll = function() {
+      if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+        topBtn.style.display = "block";
+      } else {
+        topBtn.style.display = "none";
+      }
+    };
+
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  </script>
+</body>
+</html>

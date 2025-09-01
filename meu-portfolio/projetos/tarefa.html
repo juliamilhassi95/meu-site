@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Lista de Tarefas</title>
+  <style>
+    body {
+      font-family: 'Trebuchet MS', sans-serif;
+      margin: 0;
+      background: #f1f8e9;
+      color: #33691e;
+    }
+    header {
+      background: #689f38;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    main {
+      max-width: 500px;
+      margin: 30px auto;
+      padding: 20px;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    }
+    input {
+      width: 70%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    button {
+      padding: 10px 15px;
+      margin-left: 10px;
+      background: #689f38;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+      margin-top: 20px;
+    }
+    li {
+      padding: 10px;
+      background: #dcedc8;
+      margin-bottom: 10px;
+      border-radius: 5px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: background 0.3s;
+    }
+    li.completed {
+      text-decoration: line-through;
+      color: gray;
+      background: #c8e6c9;
+    }
+    li button {
+      background: red;
+      margin: 0;
+      padding: 5px 8px;
+      border-radius: 50%;
+      font-weight: bold;
+    }
+    li button:hover {
+      background: darkred;
+    }
+    #contador {
+      margin-top: 10px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Lista de Tarefas</h1>
+    <p>Organize seu dia</p>
+  </header>
+
+  <main>
+    <input type="text" id="tarefa" placeholder="Digite uma tarefa...">
+    <button onclick="adicionar()">Adicionar</button>
+    <ul id="lista"></ul>
+    <p id="contador">Tarefas pendentes: 0</p>
+  </main>
+
+  <script>
+    function atualizarContador() {
+      const total = document.querySelectorAll('#lista li:not(.completed)').length;
+      document.getElementById('contador').textContent = 'Tarefas pendentes: ' + total;
+    }
+
+    function adicionar() {
+      const input = document.getElementById('tarefa');
+      const texto = input.value.trim();
+      if (texto === '') return;
+
+      // Verifica duplicata
+      const duplicado = Array.from(document.querySelectorAll('#lista li')).some(li => li.firstChild.textContent === texto);
+      if (duplicado) {
+        alert('Essa tarefa já existe!');
+        return;
+      }
+
+      const li = document.createElement('li');
+
+      const span = document.createElement('span');
+      span.textContent = texto;
+
+      span.addEventListener('click', () => {
+        li.classList.toggle('completed');
+        atualizarContador();
+      });
+
+      const btnRemover = document.createElement('button');
+      btnRemover.textContent = 'X';
+      btnRemover.addEventListener('click', () => {
+        li.remove();
+        atualizarContador();
+      });
+
+      li.appendChild(span);
+      li.appendChild(btnRemover);
+
+      document.getElementById('lista').appendChild(li);
+      input.value = '';
+      atualizarContador();
+    }
+  </script>
+</body>
+</html>

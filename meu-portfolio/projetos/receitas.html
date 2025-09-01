@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Receitas Fáceis</title>
+  <style>
+    body {
+      font-family: 'Verdana', sans-serif;
+      margin: 0;
+      background: #fff3e0;
+      color: #4e342e;
+    }
+    header {
+      background: peachpuff;
+      color: black;
+      text-align: center;
+      padding: 20px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+    nav {
+      text-align: center;
+      background: #ffab91;
+      padding: 10px;
+    }
+    nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: #4e342e;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    nav a:hover {
+      color: white;
+      text-shadow: 1px 1px 2px #4e342e;
+    }
+    main {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 20px;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+      overflow: hidden;
+    }
+    h2 {
+      color: black;
+      border-bottom: 2px solid peachpuff;
+      padding-bottom: 5px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    h2:hover {
+      color: #ff6f61;
+    }
+    .recipe-content {
+      display: none;
+      margin: 10px 0 20px 0;
+      transition: all 0.5s ease;
+    }
+    .content {
+      opacity: 0;
+      transition: opacity 0.5s ease;
+      display: none;
+    }
+    .active {
+      display: block;
+      opacity: 1;
+    }
+    .recipe:hover {
+      background: #ffe0cc;
+      padding: 10px;
+      border-radius: 5px;
+    }
+    footer {
+      text-align: center;
+      background: #ffab91;
+      color: black;
+      padding: 15px;
+      margin-top: 30px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Receitas Fáceis</h1>
+    <p>Aprenda pratos rápidos e deliciosos!</p>
+  </header>
+
+  <nav>
+    <a onclick="showContent('inicio')">Início</a>
+    <a onclick="showContent('doces')">Doces</a>
+    <a onclick="showContent('salgados')">Salgados</a>
+  </nav>
+
+  <main>
+    <!-- Início -->
+    <div id="inicio" class="content active">
+      <h2>Bem-vindo ao Receitas Fáceis!</h2>
+      <p>Este é um site de receitas rápidas e práticas para o dia a dia.<br>
+       Clique nas abas "Doces" ou "Salgados" para descobrir deliciosas opções de pratos!</p>
+    </div>
+
+    <!-- Doces -->
+    <div id="doces" class="content">
+      <div class="recipe">
+        <h2 onclick="toggleRecipe(this)">Bolo de Caneca</h2>
+        <div class="recipe-content">
+          <p>Uma receita prática que fica pronta em 3 minutos!</p>
+          <ul>
+            <li>2 colheres de sopa de achocolatado</li>
+            <li>2 colheres de sopa de açúcar</li>
+            <li>3 colheres de sopa de leite</li>
+            <li>1 colher de sopa de óleo</li>
+            <li>3 colheres de sopa de farinha de trigo</li>
+          </ul>
+          <p>Misture tudo na caneca e leve ao micro-ondas durante 3 minutos, e seu bolo estará pronto!</p>
+        </div>
+      </div>
+
+      <div class="recipe">
+        <h2 onclick="toggleRecipe(this)">Brigadeiro de Colher</h2>
+        <div class="recipe-content">
+          <p>Delicioso e super rápido de preparar.</p>
+          <ul>
+            <li>1 lata de leite condensado</li>
+            <li>2 colheres de sopa de chocolate em pó</li>
+            <li>1 colher de sopa de manteiga</li>
+            <li>Chocolate granulado para decorar (opcional)</li>
+          </ul>
+          <p>Cozinhe tudo em fogo baixo até desgrudar da panela. Sirva em potinhos com granulado por cima.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Salgados -->
+    <div id="salgados" class="content">
+      <div class="recipe">
+        <h2 onclick="toggleRecipe(this)">Omelete Rápida</h2>
+        <div class="recipe-content">
+          <p>Perfeita para o café da manhã ou lanche da tarde.</p>
+          <ul>
+            <li>2 ovos</li>
+            <li>1 colher de sopa de leite</li>
+            <li>Sal e pimenta a gosto</li>
+            <li>Queijo e presunto picados</li>
+          </ul>
+          <p>Bata os ovos com leite, adicione os ingredientes e cozinhe em frigideira antiaderente até dourar.</p>
+        </div>
+      </div>
+
+      <div class="recipe">
+        <h2 onclick="toggleRecipe(this)">Sanduíche de Atum</h2>
+        <div class="recipe-content">
+          <p>Rápido, nutritivo e delicioso.</p>
+          <ul>
+            <li>2 fatias de pão integral</li>
+            <li>1 lata de atum</li>
+            <li>1 colher de sopa de maionese</li>
+            <li>Folhas de alface e tomate fatiado</li>
+          </ul>
+          <p>Misture o atum com a maionese, espalhe no pão e adicione alface e tomate. Sirva na hora!</p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Receitas Fáceis</p>
+  </footer>
+
+  <script>
+    function showContent(id) {
+      const contents = document.querySelectorAll('.content');
+      contents.forEach(c => c.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+    }
+
+    function toggleRecipe(header) {
+      const content = header.nextElementSibling;
+      content.style.display = content.style.display === 'block' ? 'none' : 'block';
+    }
+  </script>
+</body>
+</html>
